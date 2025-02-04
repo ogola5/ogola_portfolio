@@ -1,0 +1,139 @@
+/* Main container for the home section */
+.home-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f4f8ff; /* Soft background color */
+  padding: 20px;
+}
+
+/* Text Box Section */
+.text-box {
+  background-color: white; /* White background for text box */
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 123, 255, 0.1); /* Soft shadow */
+  text-align: center;
+  width: 80%;
+  max-width: 800px;
+}
+
+.text-box h1 {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #003366; /* Dark blue color for the heading */
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+.text-box p.intro-text {
+  font-size: 1.2rem;
+  color: #333; /* Dark text for contrast */
+  margin-bottom: 30px;
+  line-height: 1.5;
+}
+
+.text-box a {
+  text-decoration: none;
+}
+
+.text-box .button-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.text-box button {
+  background-color: #007bff;
+  border: none;
+  color: white;
+  font-size: 1.1rem;
+  padding: 12px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.text-box button:hover {
+  background-color: #0056b3;
+  transform: translateY(-3px); /* Slight lift effect */
+}
+
+/* Skills & Services Section */
+.skills-services {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+  width: 80%;
+  max-width: 1000px;
+}
+
+.skills-services .icon-card {
+  background-color: #ffffff;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.skills-services .icon-card:hover {
+  transform: translateY(-5px); /* Hover effect */
+}
+
+.skills-services .icon-card i {
+  font-size: 3rem;
+  color: #007bff;
+  margin-bottom: 20px;
+}
+
+.skills-services .icon-card h4 {
+  font-size: 1.5rem;
+  color: #003366;
+  margin-bottom: 15px;
+}
+
+.skills-services .icon-card p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Social Links Section */
+.social-links {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  gap: 20px;
+}
+
+.social-links a {
+  font-size: 2rem;
+  color: #007bff;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #0056b3; /* Darker blue on hover */
+}
+
+/* Small Devices Adjustments */
+@media (max-width: 768px) {
+  .text-box {
+    width: 90%;
+    padding: 25px;
+  }
+
+  .text-box h1 {
+    font-size: 2rem;
+  }
+
+  .text-box p.intro-text {
+    font-size: 1rem;
+  }
+
+  .skills-services {
+    grid-template-columns: 1fr 1fr;
+  }
+}

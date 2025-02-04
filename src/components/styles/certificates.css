@@ -1,0 +1,118 @@
+/* certificates.css */
+.certificates-container {
+  color: white;
+  padding: 9rem;
+  min-height: 100vh;
+}
+
+.certificates-container h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  color: #7ec8e3;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  color: #7ec8e3;
+  margin-bottom: 1rem;
+}
+
+.card-text {
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+.card-link {
+  color: #7ec8e3;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.card-link:hover {
+  color: #0000ff;
+  text-decoration: underline;
+}
+
+.certificates-container {
+  text-align: center;
+  padding: 50px 0;
+}
+
+h2 {
+  margin-bottom: 30px;
+  color: white;
+}
+
+.card {
+  height: 100%; /* Ensure all cards are equal height */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.card-img-top {
+  height: 200px; /* Set a fixed height for images */
+  object-fit: contain; /* Ensures the full image is visible */
+  padding: 15px;
+  background: #f8f9fa; /* Light background to make images pop */
+}
+
+.card-body {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.card-text {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.card-link {
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.card-link:hover {
+  background-color: #0056b3;
+}

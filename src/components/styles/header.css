@@ -1,0 +1,78 @@
+/* Navbar customization */
+.navbar-custom {
+  background-color: #003366; /* Dark blue for navbar background */
+  padding: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for a floating effect */
+}
+
+.navbar-custom .navbar-brand {
+  font-size: 1.6rem; /* Reduced font size */
+  font-weight: bold;
+  color: white; /* White text for the brand */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+.navbar-custom .navbar-brand:hover {
+  color: #ffcc00; /* Yellow color on hover */
+}
+
+.navbar-custom .navbar-toggler {
+  border-color: white;
+}
+
+.navbar-custom .navbar-toggler-icon {
+  background-color: white;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 20px;
+}
+
+.navbar-links .nav-link {
+  color: white; /* Default white color for nav links */
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  padding: 10px 15px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar-links .nav-link:hover {
+  color: #ffcc00; /* Yellow color on hover */
+  transform: translateY(-3px); /* Slight lift effect */
+}
+
+/* Active Link Style */
+.navbar-links .nav-link.active {
+  color: #ffcc00;
+  font-weight: bold;
+}
+
+.navbar-custom .navbar-collapse {
+  justify-content: flex-end;
+}
+
+/* Mobile Menu Adjustments */
+@media (max-width: 768px) {
+  .navbar-custom {
+    padding: 0.8rem;
+  }
+
+  .navbar-brand {
+    font-size: 1.4rem; /* Reduced brand size on mobile */
+  }
+
+  .navbar-links {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .navbar-links .nav-link {
+    font-size: 1.2rem;
+    padding: 12px 0;
+  }
+}

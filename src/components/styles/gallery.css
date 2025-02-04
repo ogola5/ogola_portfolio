@@ -1,0 +1,45 @@
+/* components/styles/Gallery.css */
+
+.gallery-section {
+  padding: 40px 0; /* Space around the gallery section */
+  background-color: #f7f7fa; /* Light background color */
+}
+
+.gallery-section h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #003366; /* Dark blue color to match the theme */
+}
+
+/* Style for each image column */
+.gallery-section .col {
+  padding: 15px; /* Space around each image */
+  display: flex;
+  justify-content: center; /* Center images horizontally */
+  align-items: center; /* Center images vertically */
+  overflow: hidden; /* Prevent image overflow */
+}
+
+/* Style for each image */
+.gallery-section .image {
+  width: 100%; /* Make image use up all available width */
+  border-radius: 10px; /* Rounded corners for images */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for animations */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Hover effect for images */
+.gallery-section .image:hover {
+  transform: scale(1.05); /* Scale up image slightly */
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15); /* Larger shadow on hover */
+  cursor: pointer; /* Change cursor to indicate interactivity */
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .gallery-section .col {
+    padding: 10px;
+  }
+}
+
+/* Additional media query adjustments as needed */

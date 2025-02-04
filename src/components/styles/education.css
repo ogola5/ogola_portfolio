@@ -1,0 +1,54 @@
+/* components/styles/Education.css */
+
+.education-section {
+  background-color: #f8f9fa; /* Light background color */
+  padding: 40px 0; /* Top and bottom padding */
+  color: #495057; /* Primary text color */
+}
+
+.education-section h2 {
+  color: #003366; /* Dark blue for headers, can be adjusted */
+  margin-bottom: 30px; /* Space below the section header */
+}
+
+.education-section h3 {
+  color: #004085; /* Slightly lighter blue for degree titles */
+  margin-bottom: 10px; /* Space below degree titles */
+}
+
+.education-section p {
+  background-color: #e2e3e5; /* Slightly grey background for each paragraph */
+  border-left: 4px solid #5b8c5a; /* Theme green for the side border */
+  padding: 10px; /* Padding inside each paragraph */
+  border-radius: 5px; /* Rounded corners for the paragraph boxes */
+  margin-bottom: 10px; /* Space below each paragraph */
+}
+
+.education-section p strong {
+  color: #155724; /* Darker green for school names for emphasis */
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 992px) {
+  .education-section p {
+    padding: 8px; /* Slightly less padding for medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .education-section h2 {
+    font-size: 1.5rem; /* Smaller font size for section headers on small screens */
+  }
+
+  .education-section h3 {
+    font-size: 1.25rem; /* Smaller font size for degree titles on small screens */
+  }
+}
+
+@media (max-width: 576px) {
+  .education-section {
+    padding: 20px 0; /* Less top and bottom padding for extra small screens */
+  }
+}
+
+/* Additional media query adjustments as needed */

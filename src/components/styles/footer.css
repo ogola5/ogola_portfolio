@@ -1,0 +1,62 @@
+/* Footer Styling */
+footer {
+  background-color: #003366; /* Dark blue background */
+  color: white;
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+
+footer .icon-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+footer .icon-container a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+footer .icon-container a:hover {
+  color: #ffcc00; /* Yellow color on hover */
+  transform: translateY(-3px); /* Lift effect on hover */
+}
+
+footer .icon-container span {
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+footer .icon-container a:hover span {
+  opacity: 1; /* Highlight text on hover */
+}
+
+footer .copy-right {
+  font-size: 0.9rem;
+  color: #ddd;
+  margin-top: 20px;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  footer .icon-container {
+    gap: 15px;
+  }
+
+  footer .icon-container a {
+    font-size: 1.1rem;
+  }
+
+  footer .copy-right {
+    font-size: 0.8rem;
+  }
+}
