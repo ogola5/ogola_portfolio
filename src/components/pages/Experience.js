@@ -1,5 +1,6 @@
 import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
+import { motion } from 'framer-motion';
 import { FaBriefcase, FaBuilding, FaCalendarAlt, FaTasks } from 'react-icons/fa';
 import '../styles/experience.css';
 
@@ -49,27 +50,55 @@ const experienceData = [
 
 const Experience = () => {
   return (
-    <Container className="experience-section">
-      <h2>Professional Experience</h2>
-      {experienceData.map((job, index) => (
-        <Row key={index} className="job-entry">
-          <Col md={12}>
-            <h3>
-              <FaBriefcase /> {job.role} - {job.company}
-            </h3>
-            <p className="text-muted">
-              <FaCalendarAlt /> {job.years}
-            </p>
-            <ul>
-              {job.details.map((detail, detailIndex) => (
-                <li key={detailIndex}>
-                  <FaTasks /> {detail}
-                </li>
-              ))}
-            </ul>
-          </Col>
-        </Row>
-      ))}
+    <Container className="experience-section" id="experience">
+      <motion.h2 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        Professional Journey
+      </motion.h2>
+
+      <div className="experience-timeline">
+        {experienceData.map((job, index) => (
+          <motion.div 
+            key={index}
+            className="experience-card"
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: index * 0.15, duration: 0.5 }}
+          >
+            <div className="card-glow"></div>
+            <div className="card-header">
+              <FaBriefcase className="main-icon" />
+              <div className="title-group">
+                <h3>{job.role}</h3>
+                <div className="company-timeline">
+                  <span className="company"><FaBuilding /> {job.company}</span>
+                  <span className="timeline"><FaCalendarAlt /> {job.years}</span>
+                </div>
+              </div>
+            </div>
+            
+            <div className="card-content">
+              <ul>
+                {job.details.map((detail, detailIndex) => (
+                  <motion.li 
+                    key={detailIndex}
+                    whileHover={{ x: 10 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                  >
+                    <FaTasks className="task-icon" />
+                    <span>{detail}</span>
+                  </motion.li>
+                ))}
+              </ul>
+            </div>
+            <div className="timeline-connector"></div>
+          </motion.div>
+        ))}
+        <div className="timeline-progress"></div>
+      </div>
     </Container>
   );
 }

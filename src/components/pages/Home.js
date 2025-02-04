@@ -21,47 +21,44 @@ const Home = () => {
 
       {/* Skills & Services Section */}
       <div className="skills-services">
-        <div className="icon-card">
-          <FaCode />
-          <h4>Software Development</h4>
-          <p>I specialize in building robust web applications using modern technologies like React, Node.js, and Python.</p>
-        </div>
-        <div className="icon-card">
-          <FaDatabase />
-          <h4>Database Management</h4>
-          <p>Experienced in managing and optimizing databases with MySQL, MongoDB, and PostgreSQL for scalable solutions.</p>
-        </div>
-        <div className="icon-card">
-          <FaMobileAlt />
-          <h4>Mobile Development</h4>
-          <p>Creating responsive and user-friendly mobile apps with React Native, ensuring great performance across all devices.</p>
-        </div>
-        <div className="icon-card">
-          <FaCloud />
-          <h4>Cloud Solutions</h4>
-          <p>Building and deploying applications on cloud platforms like AWS and Azure for optimal performance and scalability.</p>
-        </div>
+        {[...Array(4)].map((_, index) => (
+          <div className="gradient-border" key={index}>
+            <div className="icon-card">
+              {index === 0 && <FaCode />}
+              {index === 1 && <FaDatabase />}
+              {index === 2 && <FaMobileAlt />}
+              {index === 3 && <FaCloud />}
+              <h4>{
+                ['Software Development', 'Database Management', 
+                 'Mobile Development', 'Cloud Solutions'][index]
+              }</h4>
+              <p>{
+                [
+                  'I specialize in building robust web applications using modern technologies like React, Node.js, and Python.',
+                  'Experienced in managing and optimizing databases with MySQL, MongoDB, and PostgreSQL for scalable solutions.',
+                  'Creating responsive and user-friendly mobile apps with React Native, ensuring great performance across all devices.',
+                  'Building and deploying applications on cloud platforms like AWS and Azure for optimal performance and scalability.'
+                ][index]
+              }</p>
+            </div>
+          </div>
+        ))}
       </div>
 
       {/* Social Links Section */}
       <div className="social-links">
-          <a href="https://github.com/ogola5" target="_blank" rel="noopener noreferrer">
-            <FaGithub />
+        {[
+          {icon: <FaGithub />, link: 'https://github.com/ogola5'},
+          {icon: <FaLinkedin />, link: 'https://www.linkedin.com/in/ogola-evance-51a30a1bb'},
+          {icon: <FaTwitter />, link: 'https://twitter.com/ogolaevance5'},
+          {icon: <FaEnvelope />, link: 'mailto:ogolaevance5@gmail.com'},
+          {icon: <FaWhatsapp />, link: 'https://wa.me/+254799457182'}
+        ].map((social, index) => (
+          <a href={social.link} target="_blank" rel="noopener noreferrer" key={index}>
+            {social.icon}
           </a>
-          <a href="https://www.linkedin.com/in/ogola-evance-51a30a1bb" target="_blank" rel="noopener noreferrer">
-            <FaLinkedin />
-          </a>
-          <a href="https://twitter.com/ogolaevance5" target="_blank" rel="noopener noreferrer">
-            <FaTwitter />
-          </a>
-          <a href="mailto:ogolaevance5@gmail.com" target="_blank" rel="noopener noreferrer">
-            <FaEnvelope />
-          </a>
-          <a href="https://wa.me/+254799457182" target="_blank" rel="noopener noreferrer">
-            <FaWhatsapp />
-          </a>
-        </div>
-
+        ))}
+      </div>
     </div>
   );
 }
