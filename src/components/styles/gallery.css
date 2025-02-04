@@ -1,45 +1,100 @@
-/* components/styles/Gallery.css */
-
+/* Dark Theme Foundation */
 .gallery-section {
-  padding: 40px 0; /* Space around the gallery section */
-  background-color: #f7f7fa; /* Light background color */
+  padding: 8rem 2rem;
+  background: linear-gradient(-45deg, #0a192f, #172a45, #1a3a3a);
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
 }
 
 .gallery-section h2 {
+  font-size: 2.5rem;
+  color: #64ffda;
   text-align: center;
-  margin-bottom: 30px;
-  color: #003366; /* Dark blue color to match the theme */
+  margin-bottom: 4rem;
+  position: relative;
+  z-index: 1;
 }
 
-/* Style for each image column */
-.gallery-section .col {
-  padding: 15px; /* Space around each image */
+/* Holographic Grid System */
+.hologrid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-auto-rows: 250px;
+  grid-gap: 2rem;
+  padding: 2rem;
+  position: relative;
+}
+
+.grid-item {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  transform-style: preserve-3d;
+}
+
+.image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.hologram-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(10, 25, 47, 0.9), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
   display: flex;
-  justify-content: center; /* Center images horizontally */
-  align-items: center; /* Center images vertically */
-  overflow: hidden; /* Prevent image overflow */
+  align-items: flex-end;
+  padding: 1.5rem;
 }
 
-/* Style for each image */
-.gallery-section .image {
-  width: 100%; /* Make image use up all available width */
-  border-radius: 10px; /* Rounded corners for images */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for animations */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+.image-title {
+  color: #e6f1ff;
+  font-size: 1.1rem;
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
 }
 
-/* Hover effect for images */
-.gallery-section .image:hover {
-  transform: scale(1.05); /* Scale up image slightly */
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15); /* Larger shadow on hover */
-  cursor: pointer; /* Change cursor to indicate interactivity */
+.grid-item:hover .image-overlay {
+  opacity: 1;
 }
 
-/* Media queries for responsiveness */
-@media (max-width: 768px) {
-  .gallery-section .col {
-    padding: 10px;
-  }
+.grid-item:hover .image-title {
+  transform: translateY(0);
 }
 
-/* Additional media query adjustments as needed */
+.grid-glow {
+  position: absolute;
+  width: 150%;
+  height: 150%;
+  background: radial-gradient(circle, #64ffda15 0%, transparent 60%);
+  animation: gridFloat 20s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes gridFloat {
+  0% { transform: translate(-25%, -25%); }
+  100% { transform: translate(25%, 25%); }
+}
+
+/* Interactive Effects */
+.grid-item::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}

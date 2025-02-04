@@ -1,19 +1,31 @@
 /* Footer Styling */
 footer {
-  background-color: #003366; /* Dark blue background */
+  background-color: #0a192f; /* Dark gradient-like background */
   color: white;
   padding-top: 30px;
   padding-bottom: 20px;
 }
 
-footer .icon-container {
+/* Title for sections */
+.footer-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #64ffda; /* Highlighted text color */
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Social Icons Container */
+.icon-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
+  margin-bottom: 20px;
 }
 
-footer .icon-container a {
+/* Individual Link Styling */
+.footer-link {
   color: white;
   text-decoration: none;
   font-size: 1.3rem;
@@ -23,12 +35,13 @@ footer .icon-container a {
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
-footer .icon-container a:hover {
-  color: #ffcc00; /* Yellow color on hover */
+.footer-link:hover {
+  color: #64ffda; /* Highlighted hover color */
   transform: translateY(-3px); /* Lift effect on hover */
 }
 
-footer .icon-container span {
+/* Icon Spans */
+.footer-link span {
   font-size: 1rem;
   font-weight: 500;
   text-transform: uppercase;
@@ -36,27 +49,53 @@ footer .icon-container span {
   transition: opacity 0.3s ease;
 }
 
-footer .icon-container a:hover span {
+.footer-link:hover span {
   opacity: 1; /* Highlight text on hover */
 }
 
-footer .copy-right {
+/* Quick Links */
+.quick-links {
+  gap: 15px;
+}
+
+.quick-links li {
+  margin: 5px 0;
+}
+
+.quick-links a {
+  color: #a8b2d1;
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.quick-links a:hover {
+  color: #64ffda; /* Highlighted hover color */
+}
+
+/* Copyright Text */
+.copy-right {
   font-size: 0.9rem;
   color: #ddd;
   margin-top: 20px;
 }
 
-/* Mobile Adjustments */
+/* Responsive Adjustments */
 @media (max-width: 768px) {
-  footer .icon-container {
+  .footer-title {
+    font-size: 1.2rem;
+  }
+
+  .icon-container {
     gap: 15px;
   }
 
-  footer .icon-container a {
+  .footer-link {
     font-size: 1.1rem;
   }
 
-  footer .copy-right {
+  .copy-right {
     font-size: 0.8rem;
   }
 }

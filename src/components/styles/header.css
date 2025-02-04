@@ -1,78 +1,116 @@
-/* Navbar customization */
-.navbar-custom {
-  background-color: #003366; /* Dark blue for navbar background */
-  padding: 1rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for a floating effect */
+/* Cyberpunk Header Styles */
+.cyber-navbar {
+  background: linear-gradient(145deg, #0a192fdd, #172a45dd);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #64ffda33;
+  padding: 1rem 0;
+  transition: all 0.3s ease;
 }
 
-.navbar-custom .navbar-brand {
-  font-size: 1.6rem; /* Reduced font size */
-  font-weight: bold;
-  color: white; /* White text for the brand */
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: color 0.3s ease;
+.neuro-brand {
+  position: relative;
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: transparent;
+  background: linear-gradient(45deg, #64ffda, #7ec8e3);
+  -webkit-background-clip: text;
+  background-clip: text;
+  padding: 0.5rem 0;
 }
 
-.navbar-custom .navbar-brand:hover {
-  color: #ffcc00; /* Yellow color on hover */
+.cyber-underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #64ffda;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
 }
 
-.navbar-custom .navbar-toggler {
-  border-color: white;
+.neuro-brand:hover .cyber-underline {
+  transform: scaleX(1);
 }
 
-.navbar-custom .navbar-toggler-icon {
-  background-color: white;
+.hologram-toggle {
+  border-color: #64ffda;
+  background-image: linear-gradient(45deg, 
+    transparent 50%,
+    #64ffda33 100%);
 }
 
-.navbar-links {
-  display: flex;
-  gap: 20px;
+.hologram-toggle:hover {
+  background-color: #64ffda11;
 }
 
-.navbar-links .nav-link {
-  color: white; /* Default white color for nav links */
-  font-size: 1.1rem;
+.neuro-links {
+  gap: 2rem;
   font-weight: 500;
-  text-transform: uppercase;
-  padding: 10px 15px;
-  transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.navbar-links .nav-link:hover {
-  color: #ffcc00; /* Yellow color on hover */
-  transform: translateY(-3px); /* Slight lift effect */
+.neuro-link {
+  position: relative;
+  color: #a8b2d1 !important;
+  padding: 0.5rem 1rem !important;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: all 0.3s ease;
 }
 
-/* Active Link Style */
-.navbar-links .nav-link.active {
-  color: #ffcc00;
-  font-weight: bold;
+.link-hover {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg,
+    transparent,
+    #64ffda33,
+    transparent);
+  transition: left 0.6s ease;
 }
 
-.navbar-custom .navbar-collapse {
-  justify-content: flex-end;
+.neuro-link:hover {
+  color: #64ffda !important;
 }
 
-/* Mobile Menu Adjustments */
-@media (max-width: 768px) {
-  .navbar-custom {
-    padding: 0.8rem;
+.neuro-link:hover .link-hover {
+  left: 100%;
+}
+
+.link-text {
+  position: relative;
+  z-index: 1;
+}
+
+.glitch-text {
+  position: relative;
+}
+
+.glitch-text::before {
+  content: attr(data-text);
+  position: absolute;
+  left: -2px;
+  text-shadow: 2px 0 #ff0000;
+  animation: glitch-1 2s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-1 {
+  0% { clip-path: inset(20% 0 30% 0); }
+  100% { clip-path: inset(10% 0 40% 0); }
+}
+
+@media (max-width: 992px) {
+  .neuro-links {
+    padding: 2rem 0;
+    gap: 1rem;
   }
 
-  .navbar-brand {
-    font-size: 1.4rem; /* Reduced brand size on mobile */
-  }
-
-  .navbar-links {
-    flex-direction: column;
-    gap: 15px;
-    text-align: center;
-  }
-
-  .navbar-links .nav-link {
-    font-size: 1.2rem;
-    padding: 12px 0;
+  .neuro-link {
+    justify-content: center;
+    background: rgba(10, 25, 47, 0.8);
+    margin: 0.5rem 0;
   }
 }
